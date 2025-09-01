@@ -3,8 +3,9 @@ import Button from "./utils/Button";
 const HeroSection = () => {
   const winter = true;
   return (
-    <div className="h-screen items-center flex bg-blue-600 ">
-      <div className="space-y-4 pl-10">
+    <div className="relative h-screen items-center flex bg-[url('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2019/12/home-new-bg-free-img.jpg')] bg-cover bg-center ">
+      <div className="bg-black opacity-30 absolute inset-0"></div>
+      <div className="space-y-4 pl-10 z-[1000]">
         {winter ? (
           <h1 className="text-5xl text-white">
             Raining Offers For <br /> Cold Winter!
