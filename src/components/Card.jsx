@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const Card = ({ discountInfo, body, imageUrl }) => {
   useEffect(() => {
     AOS.init();
-  }, []);
+  });
 
   return (
     <article

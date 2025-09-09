@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function TodoApp() {
-  const [todos, setTodos] = useState([]);
-  const [input, setInput] = useState("");
-
+  const [todos, setTodos] = useState(() => {
+    const saved = localStorage.getItem("todos");
+    return saved ? JSON.parse(saved) : [];
+  }); //Usestate for storing todos
+  const [input, setInput] = useState(""); //Usestate for grabbing user input
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
   const addTodo = () => {
     if (input.trim() === "") return;
     const newTodo = {
@@ -11,8 +16,9 @@ function TodoApp() {
       text: input,
       completed: false,
     };
-    setTodos([...todos, newTodo]);
+    setTodos([...todos, newTodo]); //Spread operator
     setInput("");
+    console.log(newTodo);
   };
 
   const toggleTodo = (id) => {
@@ -55,8 +61,8 @@ function TodoApp() {
           >
             <span
               onClick={() => toggleTodo(todo.id)}
-              className={`cursor-pointer ${
-                todo.completed ? "line-through text-gray-500" : ""
+              className={`cursor-pointer  ${
+                todo.completed ? "text-red-500" : ""
               }`}
             >
               {todo.text}
@@ -75,3 +81,6 @@ function TodoApp() {
 }
 
 export default TodoApp;
+//Json
+//PARSE is to convert from Json
+//STRINGIFY is to convert to Json

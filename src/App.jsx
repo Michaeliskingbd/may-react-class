@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import State from "./pages/State";
 import AuthPage from "./pages/LoginPage";
+import TodoApp from "./pages/Todo";
+import PostPage from "./pages/PostPage";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/state" element={<State />} />
         <Route path="/login" element={<AuthPage />} />
+        <Route path="/todo" element={<TodoApp />} />
+        <Route path="/posts" element={<PostPage />} />
       </Routes>
     </section>
   );
