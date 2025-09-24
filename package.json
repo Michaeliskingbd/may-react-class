@@ -11,6 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages --dist dist --branch gh-pages"
   },
+  "homepage": "https://michaeliskingbd.github.io/may-react-class/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.9.0",
     "antd": "^5.27.4",
