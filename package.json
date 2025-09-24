@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages --dist dist --branch gh-pages"
+    "deploy": "gh-pages -d dist"
   },
   "homepage": "https://michaeliskingbd.github.io/may-react-class/",
   "dependencies": {
