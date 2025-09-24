@@ -6,11 +6,14 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Dropdown from "./Dropdown";
 import { Link } from "react-router-dom";
+import { useUser } from "../context/Usercontext";
 
 const Navbar = () => {
   const [mobileNav, setMobileNav] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const { user } = useUser();
   useEffect(() => {
     AOS.init();
   }, []);
@@ -37,6 +40,7 @@ const Navbar = () => {
   return (
     <div>
       <nav className="flex justify-between items-center px-8 py-4 bg-blue-400 text-white">
+        <div>{user ? user.firstName : "visitor"}</div>
         <div className="text-2xl font-bold">
           <img
             src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo1-free-img-140x47.png"

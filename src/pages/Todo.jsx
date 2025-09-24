@@ -1,6 +1,19 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 function TodoApp() {
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/user");
+        console.log(response);
+      } catch (err) {
+        console.error("error", err);
+      }
+    };
+    fetch();
+  }, []);
+
   const [todos, setTodos] = useState(() => {
     const saved = localStorage.getItem("todos");
     return saved ? JSON.parse(saved) : [];

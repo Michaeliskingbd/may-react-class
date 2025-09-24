@@ -9,21 +9,10 @@ import {
   FaEye,
   FaEyeSlash,
 } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
-
-  const navigate = useNavigate();
-
-  const handleLogin = () => {
-    navigate("/");
-  };
-
-  // const togglePassword = () => {
-  //   setShowPassword(!showPassword);
-  // };
 
   return (
     <div className="h-fit flex">
@@ -164,10 +153,7 @@ const AuthPage = () => {
                 >
                   Forgot Your Password?
                 </a>
-                <button
-                  onClick={handleLogin}
-                  className="bg-white text-blue-900 font-bold py-2 rounded-full mt-4 hover:bg-gray-200 transition"
-                >
+                <button className="bg-white text-blue-900 font-bold py-2 rounded-full mt-4 hover:bg-gray-200 transition">
                   ENTER
                 </button>
               </motion.form>
